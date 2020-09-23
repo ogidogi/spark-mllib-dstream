@@ -1,0 +1,27 @@
+{
+  "spark": {
+    "master": "local[*]",
+    "app_name": "SPARK_STREAMING_TO_HDFS",
+    "batch_duration": 30
+  },
+  "kafka": {
+    "brokers": "localhost:9092",
+    "group_id": "spark_ml_testing",
+    "consumer_topic": "spark_ml_poc",
+    "producer_topic": "spark_ml_poc",
+    "auto_offset_reset": "earliest"
+  },
+  "hdfs": {
+    "storage_location": "/user/mlstream/spark_compaction"
+  },
+  "kudu" : {
+    "master": "localhost:7051",
+    "table_name": "spark_ml_poc.flower_data"
+  },
+  "ml": {
+    "app_name": "SPARK_ML",
+    "dataset_path": "file:///user/mlstream/spark-mllib-dstream/flower_data",
+    "classifier": "DecisionTree",
+    "model_location": "/user/mlstream/spark-mllib-dstream"
+  }
+}
